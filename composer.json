@@ -1,0 +1,47 @@
+{
+    "name": "bagoesz21/laravel-vhost",
+    "description": "Generator Virtual Host for Laravel Framework",
+    "license": "license",
+    "authors": [
+        {
+            "name": "bagoesz21",
+            "email": "bgs.beep21@gmail.com",
+            "homepage": "https://github.com/bagoesz21/"
+        }
+    ],
+    "homepage": "https://github.com/bagoesz21/laravel-vhost",
+    "keywords": ["Laravel", "LaravelVhost"],
+    "require": {
+        "php": ">=7.3",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bagoesz21\\LaravelVhost\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bagoesz21\\LaravelVhost\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bagoesz21\\LaravelVhost\\LaravelVhostServiceProvider"
+            ],
+            "aliases": {
+                "LaravelVhost": "Bagoesz21\\LaravelVhost\\Facades\\LaravelVhost"
+            }
+        }
+    },
+    "scripts": {
+        "check-style": "phpcs -p --standard=PSR12 config/ src/ tests/",
+        "fix-style": "phpcbf -p --standard=PSR12 config/ src/ tests/",
+        "test": "phpunit"
+    }
+}
